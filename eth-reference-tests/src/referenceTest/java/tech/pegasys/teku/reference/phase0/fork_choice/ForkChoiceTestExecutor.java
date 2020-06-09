@@ -60,11 +60,8 @@ public class ForkChoiceTestExecutor implements TestExecutor {
 
   @SuppressWarnings("rawtypes")
   public static Stream<Arguments> loadForkChoiceTests() throws Exception {
-    String[] list = Paths.get(".").toFile().list();
-
-    System.out.println(Arrays.toString(list));
     Path path =
-        Paths.get("src/referenceTest/resources/eth2.0-spec-tests/tests/minimal/phase0/fork_choice/integration_tests/");
+        Paths.get("src/referenceTest/java/tech/pegasys/teku/reference/phase0/fork_choice/integration_tests/");
     List<File> testFiles = findForkChoiceTestsByPath(path);
     return testFiles.stream()
         .flatMap(
