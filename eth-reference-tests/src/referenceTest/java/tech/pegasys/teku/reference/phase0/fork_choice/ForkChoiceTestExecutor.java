@@ -157,7 +157,7 @@ public class ForkChoiceTestExecutor implements TestExecutor {
   @Override
   public void runTest(TestDefinition testDefinition) throws Throwable {}
 
-  @ParameterizedTest(name = "{index}.{2} process final updates")
+  @ParameterizedTest(name = "{index}.{2} fork choice test")
   @MethodSource("loadForkChoiceTests")
   void runForkChoiceTests(
       BeaconState genesis, List<Object> steps, String testName, boolean protoArrayFC)
@@ -232,11 +232,11 @@ public class ForkChoiceTestExecutor implements TestExecutor {
                 assertEquals(root, head, "head");
                 break;
               }
-            case "justified_checkpoint.epoch":
+            case "justified_checkpoint_epoch":
               {
                 UnsignedLong expected = UnsignedLong.valueOf((Integer) e.getValue());
                 UnsignedLong actual = storageClient.getStore().getJustifiedCheckpoint().getEpoch();
-                assertEquals(expected, actual, "justified_checkpoint.epoch");
+                assertEquals(expected, actual, "justified_checkpoint_epoch");
                 break;
               }
             default:

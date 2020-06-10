@@ -102,5 +102,5 @@ steps:
     head: '0x923e105b658769c22d7e9cfee62af164136bd3d253ea39bffaa4217aa6dfb1b0'
 - block: block_22.ssz
 - checks:
-    head: '0x9eebbd428024f7f9400a30c2803cad98389f4ffee4bc94c2f2142456ccf50ff4'
+    head: '0x923e105b658769c22d7e9cfee62af164136bd3d253ea39bffaa4217aa6dfb1b0'
     justified_checkpoint_epoch: 0
